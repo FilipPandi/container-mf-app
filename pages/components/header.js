@@ -1,8 +1,6 @@
 import React, {Suspense, useState} from "react";
 import {Panel} from "primereact/panel";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
+
 import {TabMenu} from "primereact/tabmenu";
 import Public from "@/pages/components/public";
 import Cms from "@/pages/components/cms";
@@ -46,7 +44,9 @@ function Header() {
         <div style={{margin: '5%'}}>
             <Panel header="Header" className="custom-panel">
 
-                <div style={{padding: '30px'}}></div>
+                <h2>Ovo je MicroFrontend aplikacija!</h2>
+
+                <div style={{padding: '10px'}}></div>
 
                 <div className="card">
                     <TabMenu model={items} activeIndex={activeIndex} onTabChange={(e) => setDynComp(goTo(e))}/>
