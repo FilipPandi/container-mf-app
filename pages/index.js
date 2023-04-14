@@ -1,12 +1,9 @@
-import MicroFrontend from "@/pages/Microfrontends";
+import Header from "@/pages/components/header";
 
 export default function Home() {
-
-const host = "http://localhost:3001"
-
-  return (
-   <div>
-       <MicroFrontend host={host} name="Child1" />
-   </div>
-  )
+    return (
+        <div>
+            <Header></Header>
+        </div>
+    );
 }

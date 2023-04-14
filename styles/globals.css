@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+.custom-panel .p-panel-header {
+  background-color: #54b5a6 !important;
+  color: #ffffff !important;
+}
