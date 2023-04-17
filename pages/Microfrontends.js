@@ -1,11 +1,19 @@
-import React, { useEffect } from "react";
-function MicroFrontend({ name, host }) {
+import React, {useEffect} from "react";
+
+export function unmount(name) {
+    const unmountMicroFrontend = () => {
+        window[`unmount${name}`] && window[`unmount${name}`](`${name}-container`);
+    };
+
+    return unmountMicroFrontend();
+}
+
+function MicroFrontend({name, host}) {
     useEffect(() => {
         const scriptId = `micro-frontend-script-${name}`;
 
         const renderMicroFrontend = () => {
-
-            window[`render${name}`](`${name}-container`, history);
+            window[`render${name}`](`${name}-container`);
         };
 
         if (document.getElementById(scriptId)) {
@@ -27,7 +35,7 @@ function MicroFrontend({ name, host }) {
             });
 
         return () => {
-            window[`unmount${name}`] && window[`unmount${name}`](`${name}-container`);
+            unmount(name);
         };
     });
 

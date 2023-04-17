@@ -1,12 +1,15 @@
 import React from "react";
-import MicroFrontend from "@/pages/Microfrontends";
+import MicroFrontend, {unmount} from "@/pages/Microfrontends";
 
 function Private() {
     const host = "http://localhost:3003"
+    const applicationName = "Child3";
+
+    unmount(applicationName);
 
     return (
         <div>
-            <MicroFrontend host={host} name="Child3"/>
+            <MicroFrontend host={host} name={applicationName}/>
         </div>
     );
 }

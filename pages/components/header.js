@@ -7,7 +7,7 @@ import Cms from "@/pages/components/cms";
 import Private from "@/pages/components/private";
 
 function Header() {
-    const [dynComp, setDynComp] = useState(<div/>);
+    const [dynComp, setDynComp] = useState("");
 
     const [activeIndex, setActiveIndex] = useState(3);
     const items = [
@@ -18,7 +18,6 @@ function Header() {
 
     const goTo = (e) => {
         setActiveIndex(e.index);
-        console.log(e.index)
         if (e.index === 0) {
             return (
                 <Suspense fallback={<div>Loading...</div>}>
@@ -52,6 +51,7 @@ function Header() {
                     <TabMenu model={items} activeIndex={activeIndex} onTabChange={(e) => setDynComp(goTo(e))}/>
                 </div>
             </Panel>
+
             {dynComp}
         </div>
 
