@@ -13,7 +13,7 @@ function Public() {
                 Javni dio!
                 <br/>
                 <h2><Link prefetch={true} className={"link"} href="/components/componentPublic"><Button
-                    severity="secondary" icon="pi pi-desktop" label={"Component Public"}/></Link></h2>
+                    severity="secondary" icon="pi pi-desktop" label={"Component Public - LINK"}/></Link></h2>
                 <hr/>
                 <Link prefetch={true} href="http://localhost:3002">3002 PREFETCH</Link>
                 <hr/>
