@@ -1,11 +1,13 @@
 import React, {useEffect} from "react";
 
 export function unmount(name) {
-    const unmountMicroFrontend = () => {
-        window[`unmount${name}`] && window[`unmount${name}`](`${name}-container`);
-    };
+    if (typeof window !== "undefined") {
+        const unmountMicroFrontend = () => {
+            window[`unmount${name}`] && window[`unmount${name}`](`${name}-container`);
+        };
 
-    return unmountMicroFrontend();
+        return unmountMicroFrontend();
+    }
 }
 
 function MicroFrontend({name, host}) {
