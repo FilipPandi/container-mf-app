@@ -1,9 +1,9 @@
 import {EditTextarea} from "react-edit-text";
 import React, {useEffect, useRef, useState} from "react";
 import {Button} from "primereact/button";
-import {TextType} from './model/TextModel.js';
+import {TextType} from '../../../api/model/TextModel.js';
 import {Toast} from "primereact/toast";
-import {GetByTextType, SaveTextModel} from './service/Service';
+import {GetByTextType, SaveTextModel} from '../../../api/service/Service';
 import {Panel} from "primereact/panel";
 
 function TextArea() {
