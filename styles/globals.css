@@ -32,16 +32,24 @@
   from {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .custom-panel .p-panel-header {
-  background-color: #54b5a6 !important;
-  color: #ffffff !important;
+    background-color: #54b5a6 !important;
+    color: #ffffff !important;
+}
+
+.invisible-element {
+    display: none !important;
+}
+
+.visible-element {
+    display: unset !important;
 }
 
 .link {
-  text-decoration: none;
+    text-decoration: none;
 }

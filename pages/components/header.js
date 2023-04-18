@@ -6,7 +6,7 @@ import Public from "@/pages/components/public";
 import Cms from "@/pages/components/cms";
 import Private from "@/pages/components/private";
 
-function Header() {
+function Header({allTexts}) {
     const [dynComp, setDynComp] = useState("");
 
     const [activeIndex, setActiveIndex] = useState(3);
@@ -21,7 +21,7 @@ function Header() {
         if (e.index === 0) {
             return (
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Public/>
+                    <Public allTexts={allTexts}/>
                 </Suspense>
             );
         } else if (e.index === 1) {
@@ -46,7 +46,6 @@ function Header() {
                 <h2>Ovo je MicroFrontend aplikacija!</h2>
 
                 <div style={{padding: '10px'}}></div>
-
                 <div className="card">
                     <TabMenu model={items} activeIndex={activeIndex} onTabChange={(e) => setDynComp(goTo(e))}/>
                 </div>
@@ -57,5 +56,5 @@ function Header() {
 
     );
 }
-
 export default Header;
+

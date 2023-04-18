@@ -3,8 +3,11 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import Head from 'next/head'
+import axios from "axios";
 
-export default function Home() {
+const url = "http://localhost:8081"
+const prefixText = "/text";
+export default function Home({allTexts}) {
     return (
         <div>
             <header>
@@ -13,7 +16,23 @@ export default function Home() {
             <Head>
                 <title>MicroFrontend Container Root</title>
             </Head>
-            <Header></Header>
+            <Header allTexts={allTexts}></Header>
         </div>
     );
+}
+
+export async function getStaticProps() {
+    let allTexts;
+
+    const resTexts = await axios.get(url + prefixText + "/getAllText");
+
+    if (resTexts) {
+        allTexts = await resTexts.data;
+    }
+
+    return {
+        props: {
+            allTexts
+        }
+    }
 }
