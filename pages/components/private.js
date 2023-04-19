@@ -8,9 +8,9 @@ function Private() {
     unmount(applicationName);
 
     return (
-        <div style={{margin: '4%'}}>
-            <MicroFrontend host={host} name={applicationName}/>
-        </div>
+        <React.Fragment>
+            <MicroFrontend style={{margin: '4%'}} host={host} name={applicationName}/>
+        </React.Fragment>
     );
 }
 

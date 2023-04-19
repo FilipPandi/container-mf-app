@@ -72,9 +72,9 @@ function CalendarPreview() {
     }
 
     return (
-        <div style={{paddingTop: '1%'}}>
+        <React.Fragment>
             <Toast ref={toastRef}/>
-            <Panel header="Calendar preview" className="custom-panel">
+            <Panel style={{paddingTop: '1%'}} header="Calendar preview" className="custom-panel">
                 <table>
                     <tbody>
                     <tr>
@@ -95,7 +95,7 @@ function CalendarPreview() {
                 <Button type="submit" style={{marginTop: '10px', backgroundColor: '#54b5a6'}} icon="pi pi-check"
                         label="Save" loading={loading} onClick={handleSaveClick} size={"small"}/>
             </Panel>
-        </div>
+        </React.Fragment>
     );
 }
 

@@ -8,9 +8,9 @@ function Cms() {
     unmount(applicationName);
 
     return (
-        <div style={{margin: '4%'}}>
+        <React.Fragment>
             <MicroFrontend host={host} name={applicationName}/>
-        </div>
+        </React.Fragment>
     );
 }
 

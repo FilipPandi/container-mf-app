@@ -44,10 +44,10 @@ function TextArea() {
     }, []);
 
     return (
-        <div style={{paddingTop: '2%'}}>
+        <React.Fragment>
             <Toast ref={toastRef}/>
 
-            <Panel header="Text area edit" className="custom-panel">
+            <Panel style={{paddingTop: '2%'}} header="Text area edit" className="custom-panel">
                 <div style={{margin: '20px'}}>
                     <EditTextarea
                         name={textArea}
@@ -64,7 +64,7 @@ function TextArea() {
                         label="Save"
                         loading={loading} onClick={handleSaveClick} size={"small"}/>
             </Panel>
-        </div>
+        </React.Fragment>
     );
 }
 

@@ -14,10 +14,11 @@ const prefixText = "/text";
 
 function Public({allTexts}) {
     return (
-        <div style={{margin: '4%'}}>
-            <Panel header="Ovo je Javni dio" className="custom-panel">
+        <React.Fragment>
+            <Panel style={{margin: '4%'}} header="Ovo je Javni dio" className="custom-panel">
                 <div style={{padding: "10px"}}>
                     <h3>Podaci sa servera (http://localhost:8081/text/getAllText): </h3>
+
                     <DataTable value={allTexts} paginator rows={3} rowsPerPageOptions={[5, 10, 25, 50]}
                                tableStyle={{minWidth: '50rem'}}>
                         <Column field="id" header="ID" style={{width: '33%'}}></Column>
@@ -27,11 +28,11 @@ function Public({allTexts}) {
 
                 </div>
                 <br/>
-                <h2><Link prefetch={true} className={"link"} href="/components/editor/TextEditor"><Button
+                <h2><Link prefetch={true} className={"link"} href="/components/editor/MainEditor"><Button
                     severity="secondary" icon="pi pi-desktop" label={"Add Text - LINK Routing NextJs"}/></Link>
                 </h2>
             </Panel>
-        </div>
+        </React.Fragment>
     );
 }
 

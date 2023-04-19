@@ -9,10 +9,7 @@ import {Panel} from "primereact/panel";
 import 'primeicons/primeicons.css';
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import CalendarPreview from "@/pages/components/editor/CalendarPreview";
 import FileUploadComponent from "@/pages/components/editor/FileUploadComponent";
-import Link from "next/link";
-import TextArea from "@/pages/components/editor/TextArea";
 
 function TextEditor() {
     const [text, setText] = useState('');
@@ -76,12 +73,7 @@ function TextEditor() {
 
 
     return (
-        <div style={{paddingLeft: '4%', paddingRight: '4%'}}>
-            <h1>Editor examples</h1>
-
-            <h2><Link prefetch={true} className={"link"} href="/"><Button severity="secondary"
-                                                                          icon="pi pi-angle-double-left"
-                                                                          label={"Back"}/></Link></h2>
+        <React.Fragment>
             <Toast ref={toastRef}/>
 
             <Panel header="Editor" className="custom-panel">
@@ -98,7 +90,6 @@ function TextEditor() {
                     <FileUploadComponent/>
                 </div>
 
-
                 <Button type="submit" style={{marginTop: '10px', backgroundColor: '#54b5a6'}} icon="pi pi-check"
                         label="Save" loading={loading} onClick={handleSaveClick} size={"small"}/>
 
@@ -106,10 +97,7 @@ function TextEditor() {
                         style={{marginTop: '10px', marginLeft: '10px'}} icon="pi pi-times"
                         label="Cancel" loading={loading} onClick={hideCancel} size={"small"}/>
             </Panel>
-
-            <TextArea></TextArea>
-            <CalendarPreview></CalendarPreview>
-        </div>
+        </React.Fragment>
     );
 }
 

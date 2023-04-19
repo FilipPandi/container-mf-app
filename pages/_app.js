@@ -3,13 +3,25 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import Layout from "@/pages/layout";
+import React, {useEffect} from "react";
+import {useRouter} from "next/router";
 
 export default function App({Component, pageProps}) {
+    const router = useRouter();
+
+    useEffect(() => {
+        if (router.asPath !== '/') {
+            router.replace('/').catch((e) => {
+                console.log(e)
+            });
+        }
+    }, []);
+
     return (
-        <div>
+        <React.Fragment>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
-        </div>
+        </React.Fragment>
     );
 }

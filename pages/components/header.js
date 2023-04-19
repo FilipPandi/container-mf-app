@@ -23,8 +23,8 @@ function Header({children}) {
     };
 
     return (
-        <div style={{margin: '2%'}}>
-            <Panel header="Header" className="custom-panel">
+        <React.Fragment>
+            <Panel style={{margin: '2%'}} header="Header" className="custom-panel">
 
                 <h2>Ovo je MicroFrontend aplikacija!</h2>
 
@@ -35,7 +35,7 @@ function Header({children}) {
                     }}/>
                 </div>
             </Panel>
-        </div>
+        </React.Fragment>
 
     );
 }
