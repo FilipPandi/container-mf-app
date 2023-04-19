@@ -7,10 +7,14 @@ import Link from "next/link";
 import {Button} from "primereact/button";
 import {DataTable} from "primereact/datatable";
 import {Column} from "primereact/column";
+import axios from "axios";
+
+const url = "http://localhost:8081"
+const prefixText = "/text";
 
 function Public({allTexts}) {
     return (
-        <div style={{margin: '2%'}}>
+        <div style={{margin: '4%'}}>
             <Panel header="Ovo je Javni dio" className="custom-panel">
                 <div style={{padding: "10px"}}>
                     <h3>Podaci sa servera (http://localhost:8081/text/getAllText): </h3>
@@ -26,14 +30,25 @@ function Public({allTexts}) {
                 <h2><Link prefetch={true} className={"link"} href="/components/editor/TextEditor"><Button
                     severity="secondary" icon="pi pi-desktop" label={"Add Text - LINK Routing NextJs"}/></Link>
                 </h2>
-                <hr/>
-                <Link prefetch={true} href="http://localhost:3002">3002 PREFETCH</Link>
-                <hr/>
-                <Link prefetch={false} href="http://localhost:3003">3003</Link>
-                <hr/>
             </Panel>
         </div>
     );
+}
+
+export async function getStaticProps() {
+    let allTexts;
+
+    const resTexts = await axios.get(url + prefixText + "/getAllText");
+
+    if (resTexts) {
+        allTexts = await resTexts.data;
+    }
+
+    return {
+        props: {
+            allTexts
+        }
+    }
 }
 
 export default Public;

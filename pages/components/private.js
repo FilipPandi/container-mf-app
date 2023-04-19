@@ -8,7 +8,7 @@ function Private() {
     unmount(applicationName);
 
     return (
-        <div>
+        <div style={{margin: '4%'}}>
             <MicroFrontend host={host} name={applicationName}/>
         </div>
     );

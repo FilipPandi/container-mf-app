@@ -1,10 +1,9 @@
 import React, {useEffect, useRef, useState} from "react";
 import {Toast} from "primereact/toast";
-import 'primereact/resources/themes/arya-green/theme.css'
 import {Editor} from 'primereact/editor';
 import {Button} from "primereact/button";
-import {GetByTextType, SaveTextModel} from "../../../api/service/Service";
-import {TextType} from "../../../api/model/TextModel";
+import {GetByTextType, SaveTextModel} from "@/api/service/Service";
+import {TextType} from "@/api/model/TextModel";
 import {EditText} from "react-edit-text";
 import {Panel} from "primereact/panel";
 import 'primeicons/primeicons.css';
@@ -77,7 +76,7 @@ function TextEditor() {
 
 
     return (
-        <div style={{paddingLeft: '2%', paddingRight: '2%'}}>
+        <div style={{paddingLeft: '4%', paddingRight: '4%'}}>
             <h1>Editor examples</h1>
 
             <h2><Link prefetch={true} className={"link"} href="/"><Button severity="secondary"
