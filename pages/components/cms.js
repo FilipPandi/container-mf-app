@@ -8,7 +8,7 @@ function Cms() {
     unmount(applicationName);
 
     return (
-        <div>
+        <div style={{margin: '2%'}}>
             <MicroFrontend host={host} name={applicationName}/>
         </div>
     );
