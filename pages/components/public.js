@@ -29,7 +29,7 @@ function Public({allTexts}) {
                 </div>
                 <br/>
                 <h2><Link prefetch={true} className={"link"} href="/components/editor/MainEditor"><Button
-                    severity="secondary" icon="pi pi-desktop" label={"Add Text - LINK Routing NextJs"}/></Link>
+                    severity="secondary" icon="pi pi-spin pi-cog" label={"Add Text - LINK Routing NextJs"}/></Link>
                 </h2>
             </Panel>
         </React.Fragment>
