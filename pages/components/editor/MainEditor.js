@@ -9,9 +9,9 @@ import Link from "next/link";
 export default function MainEditor() {
     return (
         <div style={{paddingLeft: '4%', paddingRight: '4%', paddingBottom: '2%'}}>
-            <h2><Link prefetch={true} className={"link"} href="/components/public"><Button severity="secondary"
-                                                                                           icon="pi pi-angle-double-left"
-                                                                                           label={"Back"}/></Link></h2>
+            <h2><Link className={"link"} href="/components/public"><Button severity="secondary"
+                                                                           icon="pi pi-angle-double-left"
+                                                                           label={"Back"}/></Link></h2>
             <h1>Editor examples</h1>
 
             <Accordion className="custom-panel">

@@ -17,7 +17,7 @@ export default function App({Component, pageProps}) {
         }
     }, []);
 
-    console.log(typeof window !== 'undefined' ? "DYNAMIC - _app.js" : "SSR- window: - _app.js");
+    console.log(typeof window !== 'undefined' ? "DYNAMIC LOAD - COMPONENT NAME: " + Component.name : "SSR LOAD - COMPONENT NAME: " + Component.name);
 
     return (
         <React.Fragment>

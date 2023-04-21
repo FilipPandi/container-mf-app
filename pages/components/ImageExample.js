@@ -6,9 +6,9 @@ import {Button} from "primereact/button";
 export default function ImageExample() {
     return (
         <div style={{margin: '4%'}}>
-            <h2><Link prefetch={true} className={"link"} href="/components/public"><Button severity="secondary"
-                                                                                           icon="pi pi-angle-double-left"
-                                                                                           label={"Back"}/></Link></h2>
+            <h2><Link className={"link"} href="/components/public"><Button severity="secondary"
+                                                                           icon="pi pi-angle-double-left"
+                                                                           label={"Back"}/></Link></h2>
 
             <div style={{marginLeft: "1%"}}>
                 <h1>Fixed image sizes from external sources:</h1>
