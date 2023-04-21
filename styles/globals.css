@@ -53,3 +53,14 @@
 .link {
     text-decoration: none;
 }
+
+.row {
+    display: inline-flex !important;
+    column-gap: 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}

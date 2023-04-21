@@ -17,6 +17,8 @@ export default function App({Component, pageProps}) {
         }
     }, []);
 
+    console.log(typeof window !== 'undefined' ? "DYNAMIC - _app.js" : "SSR- window: - _app.js");
+
     return (
         <React.Fragment>
             <Layout>
@@ -25,3 +27,4 @@ export default function App({Component, pageProps}) {
         </React.Fragment>
     );
 }
+
