@@ -21,7 +21,7 @@ export default function ImageExample() {
                         }}>OBJECT
                             FIT - COVER</h1>
                         <Image
-                            style={{objectFit: "cover"}} //Cover (cropped to fit) or Contain (full image)  / none / fill / scale-down
+                            style={{objectFit: "cover"}} //Replaces parent element - - Cover (cropped to fit) or Contain (full image)  / none / fill / scale-down
                             fill={true}
                             src="https://wallpapers.com/images/featured/oaax18kaapkokaro.jpg"
                             alt="COVER"
@@ -37,7 +37,7 @@ export default function ImageExample() {
                         }}>OBJECT
                             FIT - CONTAIN</h6>
                         <Image
-                            style={{objectFit: "contain"}} //Cover (cropped to fit) or Contain (full image)  / none / fill / scale-down
+                            style={{objectFit: "contain"}} //Replaces parent element - - Cover (cropped to fit) or Contain (full image)  / none / fill / scale-down
                             fill={true}
                             src="https://wallpapers.com/images/featured/oaax18kaapkokaro.jpg"
                             alt="CONTAIN"
@@ -53,7 +53,7 @@ export default function ImageExample() {
                         }}>OBJECT
                             FIT - NONE</h1>
                         <Image
-                            style={{objectFit: "none"}} //Cover (cropped to fit) or Contain (full image) / none / fill / scale-down
+                            style={{objectFit: "none"}} //Replaces parent element - - Cover (cropped to fit) or Contain (full image) / none / fill / scale-down
                             fill={true}
                             src="https://wallpapers.com/images/featured/oaax18kaapkokaro.jpg"
                             alt="NONE"
@@ -71,7 +71,7 @@ export default function ImageExample() {
                         }}>OBJECT
                             FIT - FILL</h1>
                         <Image
-                            style={{objectFit: "fill"}} //Cover (cropped to fit) or Contain (full image) / none / fill / scale-down
+                            style={{objectFit: "fill"}} //Replaces parent element - - Cover (cropped to fit) or Contain (full image) / none / fill / scale-down
                             fill={true}
                             src="https://wallpapers.com/images/featured/oaax18kaapkokaro.jpg"
                             alt="FILL"
@@ -87,7 +87,7 @@ export default function ImageExample() {
                         }}>OBJECT
                             FIT - SCALE-DOWN</h6>
                         <Image
-                            style={{objectFit: "scale-down"}} //Cover (cropped to fit) or Contain (full image) / none / fill / scale-down
+                            style={{objectFit: "scale-down"}} //Replaces parent element - - Cover (cropped to fit) or Contain (full image) / none / fill / scale-down
                             fill={true}
                             src="https://wallpapers.com/images/featured/oaax18kaapkokaro.jpg"
                             alt="SCALE-DOWN"
@@ -97,8 +97,6 @@ export default function ImageExample() {
                     </div>
                 </div>
             </div>
-
-
         </div>
     );
 }

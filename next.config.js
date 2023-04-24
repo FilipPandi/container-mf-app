@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    unoptimized: true,
+    unoptimized: true, //Loads image as it is
     remotePatterns: [
       {
         protocol: 'https',

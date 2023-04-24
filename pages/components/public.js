@@ -27,13 +27,37 @@ function Public({allTexts}) {
                     </DataTable>
 
                 </div>
+
                 <br/>
-                <h2><Link className={"link"} href="/components/editor/MainEditor"><Button
-                    severity="secondary" icon="pi pi-spin pi-cog" label={"Add Text - LINK Routing NextJs"}/></Link>
-                </h2>
-                <h2><Link className={"link"} href="/components/ImageExample"><Button
-                    severity="secondary" icon="pi pi-spin pi-cog" label={"Image examples"}/></Link>
-                </h2>
+
+                <div className="row">
+                    <h2><Link className={"link"} href="/components/editor/MainEditor"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Add Text - LINK Routing NextJs"}/></Link>
+                    </h2>
+
+                    <h2><Link className={"link"} href="/components/ImageExample"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Image Examples"}/></Link>
+                    </h2>
+                </div>
+
+                <div style={{padding: "10px"}}></div>
+                <div className="row">
+                    <h2><Link className={"link"} href="/components/ReducerHookExample"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Reducer Hook"}/></Link>
+                    </h2>
+
+                    <h2><Link className={"link"} href="/components/ReferenceHookExample"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Reference Hook"}/></Link>
+                    </h2>
+
+                    <h2><Link className={"link"} href="/components/EffectAndLayoutEffectHookExample"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Effect/Layout Effect Hooks"}/></Link>
+                    </h2>
+
+                    <h2><Link className={"link"} href="/components/imperative/ImperativeHookParent"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Imperative Hook"}/></Link>
+                    </h2>
+                </div>
             </Panel>
         </React.Fragment>
     );
