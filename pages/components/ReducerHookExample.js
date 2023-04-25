@@ -3,7 +3,6 @@ import {InputText} from "primereact/inputtext";
 import {Button} from "primereact/button";
 import Link from "next/link";
 
-
 const reducer = (state, action) => {
     switch (action.type) {
         case "SHOW":
@@ -11,7 +10,7 @@ const reducer = (state, action) => {
         case "WRITE":
             return {show: true};
         default:
-            return state;
+            return new Error("Reducer does not support provided type!");
     }
 };
 

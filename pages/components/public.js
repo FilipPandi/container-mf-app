@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Panel} from "primereact/panel";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
@@ -8,11 +8,20 @@ import {Button} from "primereact/button";
 import {DataTable} from "primereact/datatable";
 import {Column} from "primereact/column";
 import axios from "axios";
+import {SharedContext} from "@/pages/_app";
 
 const url = "http://localhost:8081"
 const prefixText = "/text";
 
 function Public({allTexts}) {
+    const sharedData = useContext(SharedContext);
+    sharedData.then(value => {
+        value.map(res => {
+            console.log("This is SHARED context value from PUBLIC COMPONENT: " + res.text);
+        });
+    });
+
+
     return (
         <React.Fragment>
             <Panel style={{margin: '4%'}} header="Ovo je Javni dio" className="custom-panel">
@@ -60,6 +69,10 @@ function Public({allTexts}) {
 
                     <h2><Link className={"link"} href="/components/callback/CallbackHookParent"><Button
                         severity="secondary" icon="pi pi-spin pi-cog" label={"Callback Hook"}/></Link>
+                    </h2>
+
+                    <h2><Link className={"link"} href="/components/context/SharedContextTest"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Context Hook"}/></Link>
                     </h2>
                 </div>
             </Panel>

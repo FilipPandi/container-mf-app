@@ -1,6 +1,12 @@
 import React, {useEffect} from "react";
 
 export default function CallbackHookChild({callbackFunction}) {
+    let subCallback;
+
+    if ((typeof callbackFunction) === 'function') {
+        subCallback = callbackFunction('This is child callback function passed!');
+    }
+
     useEffect(() => {
         console.log("Called from child");
     }, [callbackFunction]);
@@ -8,7 +14,7 @@ export default function CallbackHookChild({callbackFunction}) {
     return (
         <React.Fragment>
             <div style={{marginBottom: '2%'}}>
-                {callbackFunction("And this is Child part of text!")}
+                {subCallback}
             </div>
         </React.Fragment>
     );
