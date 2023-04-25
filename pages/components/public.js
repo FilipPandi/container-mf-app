@@ -57,6 +57,10 @@ function Public({allTexts}) {
                     <h2><Link className={"link"} href="/components/imperative/ImperativeHookParent"><Button
                         severity="secondary" icon="pi pi-spin pi-cog" label={"Imperative Hook"}/></Link>
                     </h2>
+
+                    <h2><Link className={"link"} href="/components/callback/CallbackHookParent"><Button
+                        severity="secondary" icon="pi pi-spin pi-cog" label={"Callback Hook"}/></Link>
+                    </h2>
                 </div>
             </Panel>
         </React.Fragment>
