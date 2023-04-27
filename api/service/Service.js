@@ -6,7 +6,7 @@ const url = "http://localhost:8081"
 const prefixText = "/text";
 const prefixCalendar = "/calendar";
 
-export async function SaveTextModel(text, textType) {
+export async function saveTextModel(text, textType) {
     const textModel = new TextModel(null, text, textType)
 
     if (text) {
@@ -14,7 +14,7 @@ export async function SaveTextModel(text, textType) {
     }
 }
 
-export async function SaveCalendarModel(date, text) {
+export async function saveCalendarModel(date, text) {
     const calendarModel = new CalendarModel(null, date, text)
 
     if (date) {
@@ -22,7 +22,7 @@ export async function SaveCalendarModel(date, text) {
     }
 }
 
-export async function GetByDate(date) {
+export async function getByDate(date) {
     const fixedDate = new Date(date);
     let calendarText;
 
@@ -36,17 +36,13 @@ export async function GetByDate(date) {
     });
 
     if (resCalendarText) {
-        calendarText = await resCalendarText.data;
+        calendarText = resCalendarText.data;
     }
 
-    return {
-        props: {
-            calendarText
-        }
-    }
+    return calendarText;
 }
 
-export async function GetByTextType(textType) {
+export async function getByTextType(textType) {
     let resultText;
     const resText = await axios.get(url + prefixText + "/findByTextType", {
         params: {
@@ -55,12 +51,8 @@ export async function GetByTextType(textType) {
     });
 
     if (resText) {
-        resultText = await resText.data;
+        resultText = resText.data;
     }
 
-    return {
-        props: {
-            resultText
-        }
-    }
+    return resultText;
 }

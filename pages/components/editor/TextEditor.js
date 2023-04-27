@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Toast} from "primereact/toast";
 import {Editor} from 'primereact/editor';
 import {Button} from "primereact/button";
-import {GetByTextType, SaveTextModel} from "@/api/service/Service";
+import {getByTextType, saveTextModel} from "@/api/service/Service";
 import {TextType} from "@/api/model/TextModel";
 import {EditText} from "react-edit-text";
 import {Panel} from "primereact/panel";
@@ -29,14 +29,16 @@ function TextEditor() {
         console.log('Component TextEditor loaded!');
         setPlaceholder(placeholderConstant);
         setVisibleCancel(false);
-        GetByTextType(TextType.TEXT1)
+
+        getByTextType(TextType.TEXT1)
             .then(value => {
-                setText(value.props.resultText.text);
+                setText(value.text);
             });
     }, []);
+
     const handleSaveClick = () => {
         if (text) {
-            const saveResponse = SaveTextModel(text, TextType.TEXT1).then(response => {
+            const saveResponse = saveTextModel(text, TextType.TEXT1).then(response => {
                 setVisibleEditor(false);
                 setVisibleEditText(true);
                 setVisibleCancel(false);

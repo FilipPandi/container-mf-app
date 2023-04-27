@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Panel} from "primereact/panel";
 import {Calendar} from "primereact/calendar";
 import {Button} from "primereact/button";
-import {GetByDate, SaveCalendarModel} from "../../../api/service/Service";
+import {getByDate, saveCalendarModel} from "../../../api/service/Service";
 import {Toast} from "primereact/toast";
 import {EditTextarea} from "react-edit-text";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
@@ -21,15 +21,15 @@ function CalendarPreview() {
     };
 
     function getTextByDate(date) {
-        return GetByDate(date)
+        return getByDate(date)
             .then(value => {
-                setText(value.props.calendarText.text);
+                setText(value.text);
             });
     }
 
     const handleSaveClick = () => {
         if (date) {
-            const saveResponse = SaveCalendarModel(date, text).then(response => {
+            const saveResponse = saveCalendarModel(date, text).then(response => {
                 setLoading(true);
 
                 toastRef.current.show({severity: 'info', summery: 'success', detail: 'Saved date: ' + date});

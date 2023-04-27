@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Button} from "primereact/button";
 import {TextType} from '@/api/model/TextModel';
 import {Toast} from "primereact/toast";
-import {GetByTextType, SaveTextModel} from '@/api/service/Service';
+import {getByTextType, saveTextModel} from '@/api/service/Service';
 import {Panel} from "primereact/panel";
 
 function TextArea() {
@@ -17,7 +17,7 @@ function TextArea() {
 
     const handleSaveClick = () => {
         if (textArea) {
-            const saveResponse = SaveTextModel(textArea, TextType.TEXT2).then(response => {
+            const saveResponse = saveTextModel(textArea, TextType.TEXT2).then(response => {
                 setLoading(true);
 
                 toastRef.current.show({severity: 'info', summery: 'success', detail: 'Saved text: ' + textArea});
@@ -37,9 +37,9 @@ function TextArea() {
 
     useEffect(() => {
         console.log('Component TextArea loaded!');
-        GetByTextType(TextType.TEXT2)
+        getByTextType(TextType.TEXT2)
             .then(value => {
-                setTextArea(value.props.resultText.text);
+                setTextArea(value.text);
             });
     }, []);
 
